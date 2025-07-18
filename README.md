@@ -1,8 +1,8 @@
 
-# Pneumonia Diagnosis Classifier (ResNet18 기반)
+# Pneumonia Diagnosis Classifier
 
 이 프로젝트는 흉부 X‑ray 이미지를 기반으로 **폐렴 여부를 분류**하는 딥러닝 모델입니다.  
-PyTorch와 torchvision의 **ResNet‑18** 백본을 사용하며, Grad‑CAM으로 시각적 설명도 제공합니다.
+PyTorch와 torchvision의 **ResNet‑18** 을 사용하며, Grad‑CAM으로 시각적 설명도 제공합니다.
 
 ---
 
@@ -51,11 +51,11 @@ python train.py
 ```bash
 python test.py
 ```
-* `pneumonia_test_images/` 데이터셋 평가  
-* 결과는 **`pneumonia_test_results.csv`** 에 저장  
-* 콘솔에 confusion matrix 및 classification report 출력
+* `pneumonia_test_images/` 데이터셋 평가
+* 결과는 **`pneumonia_test_results.csv`** 에 저장
+* 터미널에 confusion matrix 및 classification report 출력
 
-### 3) 샘플 예측 (무라벨 이미지)
+### 3) 샘플 예측 (라벨 없는 이미지)
 ```bash
 python predict.py
 ```
@@ -65,8 +65,7 @@ python predict.py
 ```bash
 python gradcam.py
 ```
-* `samples/` 이미지에 대한 Grad‑CAM 생성  
-* `_gradcam.png` 접미사로 저장
+* `samples/` 이미지에 대한 Grad‑CAM 생성
 
 ---
 
@@ -83,21 +82,10 @@ filename,label
 
 ## 🛠️ 의존성
 
-| 패키지 | 버전(예시) |
-| ------ | ---------- |
-| python | >= 3.8 |
-| torch | >= 1.10 |
-| torchvision | >= 0.11 |
-| pandas | >= 1.3 |
-| scikit‑learn | >= 1.0 |
-| pillow | >= 8.0 |
-| tqdm | >= 4.60 |
-| matplotlib | >= 3.4 |
-| opencv‑python | >= 4.5 |
 
 설치:
 ```bash
-pip install torch torchvision pandas pillow scikit-learn tqdm matplotlib opencv-python
+pip install -r requirements.txt
 ```
 
 ---
@@ -106,17 +94,7 @@ pip install torch torchvision pandas pillow scikit-learn tqdm matplotlib opencv-
 
 * **ResNet‑18** 기반 간단·경량 모델  
 * **Confusion Matrix / Classification Report** 출력  
-* **Grad‑CAM** 으로 관심 영역 시각화  
-* **라벨 없는 이미지 배치 예측** 기능
+* **Grad‑CAM** 으로 관심 영역 시각화 (gradcam.py)
+* **라벨 없는 이미지 배치 예측** 기능 (predict.py)
 
 ---
-
-## 📜 라이선스
-
-본 프로젝트는 MIT License를 따릅니다.
-
----
-
-## 📬 문의
-
-이슈나 PR로 질문 및 제안을 남겨주세요.
