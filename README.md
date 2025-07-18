@@ -31,11 +31,14 @@ project_root/
 * **백본**: ResNet‑18  
 * **출력 노드 수**: 2 (`No Finding`, `Pneumonia`)  
 * **손실 함수**: Cross‑Entropy  
-* **최적화 기법**: Adam (lr = 1e‑4)  
 
 ---
 
 ## 🔧 사용 방법
+
+### 0) 데이터 다운로드
+
+* https://drive.google.com/file/d/1zyLEoVbXU05bXzp1LOG6rC7sB6InkaOn/view?usp=sharing
 
 ### 1) 모델 학습
 ```bash
